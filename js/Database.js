@@ -2,6 +2,7 @@
 ;(function () {
   let database = {
     idCounter: 4,
+    idCommentCounter: 4,
     problems: [
         {
         id: 0,
@@ -13,6 +14,7 @@
         comments: [
             {
                 id: 1,
+                points: 5,
                 content: 'Необходимо отслеживать количество элементов через length, а так же перенести часть действий внутрь функции отслеживания нажатия кнопки'
             }
         ]
@@ -27,6 +29,7 @@
             comments: [
                 {
                     id: 2,
+                    points: 2,
                     content: `var personWithMaxSalary = massive.reduce((res, item) => (item.summ > res.summ)? item : res);
                     console.log(personWithMaxSalary.name, "makes the most money.");
                     циклы в многомерном массиве
@@ -64,6 +67,7 @@
             comments: [
                 {
                     id: 3,
+                    points: 0,
                     content: `var personWithMaxSalary = massive.reduce((res, item) => (item.summ > res.summ)? item : res);
                     console.log(personWithMaxSalary.name, "makes the most money.");
                     циклы в многомерном массиве
@@ -101,6 +105,7 @@
             comments: [
                 {
                     id: 4,
+                    points: 3,
                     content: `var personWithMaxSalary = massive.reduce((res, item) => (item.summ > res.summ)? item : res);
                     console.log(personWithMaxSalary.name, "makes the most money.");
                     циклы в многомерном массиве
@@ -117,6 +122,7 @@
     ]
   }
   load()
+  save()
   const Database = {}
 
   Database.getProblems = function getProblems () {
@@ -132,17 +138,66 @@
     return null
   }
 
-  Database.addProblem = function addProblem (title, content) {
-      database.problems.push({
-          id: database.idCounter,
-          title: title,
-          content: content,
-          points: 0,
-          comments: []
-      })
+  Database.commentPointsPlus = function commentPointsPlus (commentId) {
+    for (const problem of database.problems) {
+        for (const comment of problem.comments) {
+            if (comment.id === commentId) {
+                comment.points++
+                save()
+                return true
+            }
+        }
+    }
+    return false
+  }
+
+  Database.commentPointsMinus = function commentPointsMinus (commentId) {
+    for (const problem of database.problems) {
+        for (const comment of problem.comments) {
+            if (comment.id === commentId) {
+                comment.points--
+                save()
+                return true
+            }
+        }
+    }
+    return false
+  }
+
+  Database.addProblem = function addProblem (title, content, badges = []) {
+      const problem = {
+        id: database.idCounter,
+        title: title,
+        content: content,
+        points: 0,
+        badges: badges,
+        viewsNumber: 0,
+        comments: []
+      }
+      database.problems.push(problem)
 
       database.idCounter++
       save()
+
+      return problem.id
+  }
+
+  Database.addComment = function addComment (problemId, commentContent) {
+    for (const problem of database.problems) {
+        if (problem.id === problemId) {
+            const comment = {
+                id: database.idCommentCounter,
+                content: commentContent,
+                points: 0
+            }
+
+            database.idCommentCounter++
+            problem.comments.push(comment)
+            save()
+            return true
+        }
+    }
+    return false
   }
 
   window.Database = Database

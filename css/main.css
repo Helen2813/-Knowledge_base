@@ -80,7 +80,11 @@ a {
 
 .badges-input .badge {
 	flex-grow: 0;
-	margin-right: 5px;
+	margin-right: 10px;
+}
+
+.badge {
+	margin-left: 10px;
 }
 
 .input-for-badges {

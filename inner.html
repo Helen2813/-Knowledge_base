@@ -27,42 +27,20 @@
 
 			<div class="row mt-5 mb-5">
 				<div class="col-8 offset-2 text-center">
-					<h2>
-						Как конвертировать JSON строку с кавычками “” (вместо
-						кавычек ") в JSON формат в PHP
-					</h2>
-					<div class="question-badges-wrapper">
-						<a href="#" class="badge badge-dark">JS</a>
+					<h2 data-titleplace></h2>
+					<div class="question-badges-wrapper" data-badgesplace>
+						<!-- <a href="#" class="badge badge-dark">JS</a>
 						<a href="#" class="badge badge-dark">JSON</a>
-						<a href="#" class="badge badge-dark">PHP</a>
+						<a href="#" class="badge badge-dark">PHP</a> -->
 					</div>
 				</div>
 			</div>
 
 			<!-- Вопрос -->
 			<div class="my-3 p-3 bg-white rounded shadow-sm">
-				<div class="row">
+				<div class="row" data-contentplace>
 					<div class="col">
-						<p>
-							Задача организации, в особенности же постоянный
-							количественный рост и сфера нашей активности требуют
-							определения и уточнения соответствующий условий
-							активизации. Разнообразный и богатый опыт новая
-							модель организационной деятельности требуют
-							определения и уточнения модели развития.
-						</p>
-						<p>
-							Идейные соображения высшего порядка, а также
-							дальнейшее развитие различных форм деятельности
-							позволяет выполнять важные задания по разработке
-							системы обучения кадров, соответствует насущным
-							потребностям. Товарищи! консультация с широким
-							активом влечет за собой процесс внедрения и
-							модернизации направлений прогрессивного развития.
-							Задача организации, в особенности же рамки и место
-							обучения кадров позволяет выполнять важные задания
-							по разработке модели развития.
-						</p>
+						<pre></pre>
 					</div>
 				</div>
 			</div>
@@ -71,70 +49,12 @@
 			<div class="row mt-5 mb-3">
 				<div class="col-8 offset-2 text-center">
 					<h2>
-						2 ответа
+						Количество комментариев: <span data-comentsnumberplace>0</span> 
 					</h2>
 				</div>
 			</div>
-
-			<!-- Ответ 1 -->
-			<div class="my-3 p-3 bg-white rounded shadow-sm">
-				<div class="row">
-					<div class="col-1">
-						<div class="vote">
-							<a href="#" class="vote__plus">
-								<i class="fas fa-chevron-up"></i>
-							</a>
-							<div class="vote__value">
-								5
-							</div>
-							<a href="#" class="vote__minus">
-								<i class="fas fa-chevron-down"></i>
-							</a>
-						</div>
-					</div>
-					<div class="col">
-						<p>
-							Задача организации, в особенности же постоянный
-							количественный рост и сфера нашей активности требуют
-							определения и уточнения соответствующий условий
-							активизации. Разнообразный и богатый опыт новая
-							модель организационной деятельности требуют
-							определения и уточнения модели развития.
-						</p>
-					</div>
-				</div>
-			</div>
-			<!-- //Ответ 1 -->
-
-			<!-- Ответ 2 -->
-			<div class="my-3 p-3 bg-white rounded shadow-sm">
-				<div class="row">
-					<div class="col-1">
-						<div class="vote">
-							<a href="#" class="vote__plus">
-								<i class="fas fa-chevron-up"></i>
-							</a>
-							<div class="vote__value">
-								5
-							</div>
-							<a href="#" class="vote__minus">
-								<i class="fas fa-chevron-down"></i>
-							</a>
-						</div>
-					</div>
-					<div class="col">
-						<p>
-							Задача организации, в особенности же постоянный
-							количественный рост и сфера нашей активности требуют
-							определения и уточнения соответствующий условий
-							активизации. Разнообразный и богатый опыт новая
-							модель организационной деятельности требуют
-							определения и уточнения модели развития.
-						</p>
-					</div>
-				</div>
-			</div>
-			<!-- //Ответ 3 -->
+			
+			<div data-commentplace></div>
 
 			<!-- Оставить комментарий -->
 			<div class="my-3 p-3 bg-white rounded shadow-sm">
@@ -147,9 +67,10 @@
 									class="form-control"
 									id="exampleFormControlTextarea1"
 									rows="3"
+									data-commentplace
 								></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">
+							<button type="submit" class="btn btn-primary" data-addcommentbutton>
 								Комментировать
 							</button>
 						</form>
@@ -167,7 +88,8 @@
 		<!-- User JS -->
 		<script src="js/Database.js"></script>
         <script src="js/Location.js"></script>
-        <script src="js/Card.js"></script>
+		<script src="js/Card.js"></script>
+		<script src="js/CommentView.js"></script>
 		<script src="js/inner.js"></script>
 	</body>
 </html>
