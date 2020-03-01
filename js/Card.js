@@ -3,7 +3,7 @@
 
     const Card = {}
 
-    Card.getHTML = function (problem) {
+    Card.getHTML = function getHTML (problem) {
         const divElement = document.createElement('div')
         divElement.innerHTML = cardTemplate
             .replace('%POINTS%', problem.points)
@@ -11,6 +11,7 @@
             .replace('%VIEW_NUMBER%', problem.viewsNumber)
             .replace('%ID%', problem.id)
             .replace('%TITLE%', problem.title)
+            .replace('%TITLE%', problem.content)
 
         const badgeplaceElement = divElement.querySelector('[data-badgeplace]')
 
@@ -49,7 +50,7 @@
 					<div class="col pl-5">
 						<div class="question-title-wrapper">
 							<h5 class="question-title">
-								<a href="inner.html/?id=%ID%">%TITLE%</a>
+								<a href="inner.html?id=%ID%">%TITLE%</a>
 							</h5>
 							<div class="question-badges-wrapper" data-badgeplace></div>
 						</div>
@@ -59,3 +60,4 @@
             
         const badgeTemplate = `<a href="#" class="badge badge-light">%BADGE_LABLE%</a>`
 })();
+

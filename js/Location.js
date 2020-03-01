@@ -3,7 +3,7 @@
   
   const Location = {}
 
-  location.getId = function () {
+  Location.getId = function getId () {
       if (!location.search) {
           return false
       }
@@ -16,6 +16,7 @@
       if (index === -1) {
         return false
       }
+
       return parseInt(array[index + 1])
   }
 
