@@ -9,7 +9,7 @@
         content: 'Как в правильно задать условие на кол-во скрытых элементов с rate:hidden?',
         points: 3,
         viewsNumber: 10,
-        badges: [''],
+        badges: ['JSON', 'JS'],
         comments: [
             {
                 id: 1,
@@ -23,7 +23,7 @@
             content: 'Не могу понять, что вообще делать.',
             points: 3,
             viewsNumber: 10,
-            badges: [''],
+            badges: ['PHP', 'JS'],
             comments: [
                 {
                     id: 2,
@@ -60,7 +60,7 @@
             Не могу понять, что вообще делать. `,
             points: 3,
             viewsNumber: 10,
-            badges: [''],
+            badges: ['PHP', 'JS'],
             comments: [
                 {
                     id: 3,
@@ -97,7 +97,7 @@
             Не могу понять, что вообще делать. `,
             points: 3,
             viewsNumber: 10,
-            badges: [''],
+            badges: ['JS'],
             comments: [
                 {
                     id: 4,
